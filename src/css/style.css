@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
     background-color: lightblue;
     color: white;
     line-height: 1.5;
@@ -37,6 +37,7 @@ body {
 }
 
 .input__text {
+    font-family: monospace;
     font-size: 16px;
     width: 350px;
     outline: none;
@@ -64,7 +65,7 @@ body {
 .li-container {
     width: 80%;
     color: #292929;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .lista {
@@ -100,4 +101,46 @@ li p {
 
 .btn__delete:hover {
     background-color: #dd0202;
+}
+
+/* todo Eliminar todo */
+.delete__all {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn__delete-all {
+    cursor: pointer;
+    background-color: #e03838;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 5px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: background-color .3s ease-in-out;
+}
+
+.btn__delete-all:hover {
+    background-color: #dd0202;
+}
+
+/*todo Boton de modificar  */
+.btn__modifi {
+    cursor: pointer;
+    background-color: #fafa0f;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 5px;
+    width: 10%;
+    font-size: 1.2em;
+    transition: background-color .3s ease-in;
+}
+
+.btn__modifi:hover {
+    background-color: #e6e601;
 }
