@@ -7,12 +7,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: lightblue;
     color: white;
+    line-height: 1.5;
+    font-size: 16px;
+    padding: 0;
 }
 
 .container {
     display: flex;
     width: 500px;
-    height: max-content;
     margin: 50px auto;
     flex-direction: column;
     align-items: center;
@@ -21,21 +23,81 @@ body {
     background-color: white;
     color: black;
     border-radius: 8px;
-    padding: 20px 0 40px;
+    padding: 30px;
+    border: 2px double black;
+}
+
+.title {
+    font-size: 30px;
+    margin: 30px 0 10px;
+}
+
+.form1 {
+    display: flex;
 }
 
 .input__text {
-    width: 200px;
+    font-size: 16px;
+    width: 350px;
+    outline: none;
     border: none;
     border-bottom: 2px solid #4e4e4e;
-    margin: 20px 0;
+    margin-right: 5px;
 }
 
 .btn__add {
-    padding: 4px 12px;
     cursor: pointer;
-    background-color: #9b74be;
-    border: 1px solid;
-    border-radius: 4px;
+    padding: 8px 15px;
+    background-color: #add8e6;
+    font-family: fantasy;
     font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    transition: background-color .4s ease;
+}
+
+.btn__add:hover {
+    background-color: #2489a8;
+}
+
+.li-container {
+    width: 80%;
+    color: #292929;
+    margin-top: 20px;
+}
+
+.lista {
+    padding: 0;
+}
+
+li {
+    list-style: none; /*para eliminar el puntico*/
+    background-color: lightgray;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: flex;
+}
+
+li p {
+    margin: 0;
+    padding: 15px;
+    width: 100%;
+}
+
+.btn__delete {
+    cursor: pointer;
+    background-color: #e03838;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    padding: 5px 10px;
+    width: 10%;
+    font-size: 1.2em;
+    transition: background-color .3s ease-in;
+}
+
+.btn__delete:hover {
+    background-color: #dd0202;
 }
