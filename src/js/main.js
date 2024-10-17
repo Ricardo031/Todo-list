@@ -18,8 +18,8 @@ addBtn.addEventListener("click", (e) => {
         p.textContent = text //aqui ya se agrega el contenido que tiene el texto
 
         li.appendChild(p)
-        li.appendChild(addModiBtn())
-        li.appendChild(addDeleteBtn()) //se va a agregar el boton.
+        li.appendChild(addModiBtn()) //modificador elemento
+        li.appendChild(addDeleteBtn()) //se va a agregar el boton de eliminar el  elemento
         ul.appendChild(li)
 
         input.value = '';
@@ -27,7 +27,7 @@ addBtn.addEventListener("click", (e) => {
         empty.style.display = 'none';
     }
 
-    dele.style.display = 'block' //al momento de oprimir pues que se muestre el contenido
+    dele.style.display = 'block' //al momento de oprimir pues que se muestre el contenido del boton eliminar
 })
 
 function addDeleteBtn() {
@@ -43,14 +43,32 @@ function addDeleteBtn() {
         const items = document.querySelectorAll('li');
 
         if (items.length === 0) {
-            empty.style.display = 'block' //para que se vuelva a ver el mensaje
+            empty.style.display = 'block' //para que se vuelva a ver el mensaje de "no tienes tareas pendientes"
         }
 
         if (ul.children.length === 0) {
-            dele.style.display = 'none' //para no mostrar la casilla de eliminar 
+            dele.style.display = 'none' //para no mostrar la casilla de eliminar todo
         }
     })
     return deleteBtn;
+}
+
+function addModiBtn() {
+    const modiBtn = document.createElement('button')
+    
+    modiBtn.textContent = '🛠️'
+    modiBtn.className = 'btn__modifi'
+    
+    modiBtn.addEventListener('click', (e) => {
+        const item = e.target.parentElement;
+        
+        const newText = prompt("Modifica tu tarea:"); //el prompt para cambiar el contenido
+        if (newText !== null && newText.trim() !== '') {
+            item.firstChild.textContent = newText; //actualizar li
+        }
+    })
+    return modiBtn;
+    
 }
 
 deleteBtnAll.addEventListener('click', (e) => {
@@ -70,21 +88,3 @@ deleteBtnAll.addEventListener('click', (e) => {
         empty.style.display = 'block' //para que se vuelva a ver el mensaje
     }
 })
-
-function addModiBtn() {
-    const modiBtn = document.createElement('button')
-
-    modiBtn.textContent = '🛠️'
-    modiBtn.className = 'btn__modifi'
-
-    modiBtn.addEventListener('click', (e) => {
-        const item = e.target.parentElement;
-
-        const newText = prompt("Modifica tu tarea:"); //el prompt para cambiar el contenido
-        if (newText !== null && newText.trim() !== '') {
-            item.firstChild.textContent = newText; //actualizar li
-        }
-    })
-    return modiBtn;
-
-}

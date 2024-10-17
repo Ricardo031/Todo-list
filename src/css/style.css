@@ -24,7 +24,7 @@ body {
     color: black;
     border-radius: 8px;
     padding: 30px;
-    border: 2px double black;
+    border: 2px solid black;
 }
 
 .title {
